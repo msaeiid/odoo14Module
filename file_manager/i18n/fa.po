@@ -1,0 +1,315 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* file_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-10 08:00+0000\n"
+"PO-Revision-Date: 2022-10-10 08:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: file_manager
+#. openerp-web
+#: code:addons/file_manager/static/src/js/documents_inspector.js:0
+#, python-format
+msgid "+ Add a tag "
+msgstr "اضافه کردن برچسب"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "<i class=\"fa fa-globe\" aria-label=\"Document url\"/>"
+msgstr ""
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.documents_document_view_kanban_extend
+msgid "Add"
+msgstr "افزودن"
+
+#. module: file_manager
+#: model:ir.model,name:file_manager.model_ir_attachment
+msgid "Attachment"
+msgstr "پیوست"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_form
+msgid "Attachments"
+msgstr "پیوست"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__body
+msgid "Body"
+msgstr "متن"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__connected_to
+msgid "Connected To"
+msgstr "مرتبط به"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__create_uid
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__create_uid
+msgid "Created by"
+msgstr "ساخته شده توسط"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__create_date
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__create_date
+msgid "Created on"
+msgstr "ساخته شده در تاریخ"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Delete"
+msgstr "حذف"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_documents_document__display_name
+#: model:ir.model.fields,field_description:file_manager.field_documents_tag__display_name
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__display_name
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__display_name
+#: model:ir.model.fields,field_description:file_manager.field_ir_attachment__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: file_manager
+#: model:ir.model,name:file_manager.model_documents_document
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__documents_id
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Document"
+msgstr "سند"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_form
+msgid "File"
+msgstr "فایل"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__datas
+msgid "File Content (base64)"
+msgstr ""
+
+#. module: file_manager
+#: model:ir.model,name:file_manager.model_file_manager
+#: model:ir.model.fields,field_description:file_manager.field_documents_document__file_manager_id
+#: model:ir.model.fields,field_description:file_manager.field_ir_attachment__file_manager_id
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "File Manager"
+msgstr "مدیریت فایل"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "File Name"
+msgstr "نام فایل"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__file_size
+msgid "File Size"
+msgstr "حجم فایل "
+
+#. module: file_manager
+#: model:ir.model,name:file_manager.model_file_manager_category
+msgid "File manager Category"
+msgstr "دسته بندی مدیریت فایل"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__get_name
+msgid "GetName"
+msgstr ""
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_documents_document__id
+#: model:ir.model.fields,field_description:file_manager.field_documents_tag__id
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__id
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__id
+#: model:ir.model.fields,field_description:file_manager.field_ir_attachment__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Invalid"
+msgstr "نا معتبر"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__attachment_id
+msgid "IrAttachment"
+msgstr ""
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__is_main
+msgid "Is Main"
+msgstr "فایل اصلی است"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Last Create"
+msgstr "آخرین ایجاد"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Last Edit"
+msgstr "آخرین ویرایش"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_documents_document____last_update
+#: model:ir.model.fields,field_description:file_manager.field_documents_tag____last_update
+#: model:ir.model.fields,field_description:file_manager.field_file_manager____last_update
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category____last_update
+#: model:ir.model.fields,field_description:file_manager.field_ir_attachment____last_update
+msgid "Last Modified on"
+msgstr "تاریخ آخرین به‌روزرسانی"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__write_uid
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__write_uid
+msgid "Last Updated by"
+msgstr "آخرین بروزرسانی توسط"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__write_date
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__write_date
+msgid "Last Updated on"
+msgstr "آخرین بروزرسانی در تاریخ"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.documents_document_view_kanban_extend
+msgid "List"
+msgstr "لیست"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_form
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Main File"
+msgstr "فایل اصلی"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__mimetype
+msgid "Mime Type"
+msgstr ""
+
+#. module: file_manager
+#. openerp-web
+#: code:addons/file_manager/static/src/js/documents_inspector.js:0
+#, python-format
+msgid "Multiple values"
+msgstr ""
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__name
+msgid "Name"
+msgstr "نام"
+
+#. module: file_manager
+#. openerp-web
+#: code:addons/file_manager/static/src/js/documents_inspector.js:0
+#, python-format
+msgid "Name or Category contains: %s"
+msgstr "نام یا دسته بندی شامل: %s"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Ok"
+msgstr "انجام شد"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Owner"
+msgstr "مالک"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__product_template_id
+#: model:ir.model.fields.selection,name:file_manager.selection__file_manager__connected_to__product
+msgid "Product"
+msgstr "محصول"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__project_project_id
+#: model:ir.model.fields.selection,name:file_manager.selection__file_manager__connected_to__project
+msgid "Project"
+msgstr "پروژه"
+
+#. module: file_manager
+#. openerp-web
+#: code:addons/file_manager/static/src/js/documents_inspector.js:0
+#, python-format
+msgid "Search more..."
+msgstr "جستجوی بیشتر"
+
+#. module: file_manager
+#. openerp-web
+#: code:addons/file_manager/static/src/js/documents_inspector.js:0
+#, python-format
+msgid "Select tags"
+msgstr "یک برچسب انتخاب کنید"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__title
+msgid "Short message/Code"
+msgstr "پیام/کد کوتاه"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Size"
+msgstr "حجم فایل"
+
+#. module: file_manager
+#: model:ir.model,name:file_manager.model_documents_tag
+msgid "Tag"
+msgstr "برچسب"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__tags_ids
+msgid "Tags"
+msgstr "برچسب ها"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__type
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_list
+msgid "Type"
+msgstr "نوع"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__url
+msgid "URL"
+msgstr "آدرس اینترنتی"
+
+#. module: file_manager
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_form
+#: model_terms:ir.ui.view,arch_db:file_manager.file_manager_kanban
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#. module: file_manager
+#: model:ir.model.fields,help:file_manager.field_file_manager__type
+msgid ""
+"You can either upload a file from your computer or copy/paste an internet "
+"link to your file."
+msgstr ""
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager__category
+msgid "category"
+msgstr "دسته بندی"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_documents_tag__color
+msgid "color"
+msgstr "رنگ"
+
+#. module: file_manager
+#: model:ir.model.fields,field_description:file_manager.field_file_manager_category__category_title
+msgid "طبقه بندی موضوعی"
+msgstr ""

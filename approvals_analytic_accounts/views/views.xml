@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="approvals_approval_request_view_form_extend" model="ir.ui.view">
+            <field name="name">approval.request.view.form</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='request_details']" position="after">
+                    <field name="has_analytic_accounts" invisible="1"/>
+                    <group name="analytic_accounts">
+                        <field name="analytic_accounts"
+                               attrs="{'invisible': [('has_analytic_accounts', '=', 'no')],'required': [('has_analytic_accounts', '=', 'required')]}"/>
+                    </group>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="after">
+                    <field name="is_inventory_operation_is_allowed" invisible="1"/>
+                    <button name="send_inventory_transfer" type="object" string="Submit inventory transfer"
+                            attrs="{'invisible': [('is_inventory_operation_is_allowed', '!=', True)]}"/>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <p>
+                        <field name="approval_category_description" readonly="1"/>
+                    </p>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+            </field>
+        </record>
+        <record id="approvals_approval_category_view_form_extend" model="ir.ui.view">
+            <field name="name">approval.category.view.form</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='has_location']" position="after">
+                    <field name="stock_picking_type"
+                           attrs="{'invisible': [('approval_type', '!=', 'analytic_accounts')],'required': [('approval_type', '=', 'analytic_accounts')]}"/>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+                <xpath expr="//field[@name='has_location']" position="after">
+                    <field name="has_analytic_accounts" widget="radio"
+                           options="{'horizontal': true}"/>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+                <xpath expr="//field[@name='has_analytic_accounts']" position="attributes">
+                    <attribute name="attrs">
+                        {'readonly': [('approval_type', '=', 'analytic_accounts')]}
+                    </attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='has_analytic_accounts']" position="attributes">
+                    <attribute name="attrs">
+                        {'readonly': [('approval_type', '=', 'analytic_accounts')]}
+                    </attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="approval_purchase_category_view_form_inherits" model="ir.ui.view">
+            <field name="name">approval.purchase.category.view.form.inherits</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='approval_type']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='has_quantity']" position="attributes">
+                    <attribute name="attrs">
+                        {'readonly': ['|', ('approval_type', '=', 'analytic_accounts'),
+                                      ('approval_type', '=', 'purchase')]}
+                    </attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='has_product']" position="attributes">
+                    <attribute name="attrs">
+                        {'readonly': ['|', ('approval_type', '=', 'analytic_accounts'),
+                                      ('approval_type', '=', 'purchase')]}
+                    </attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- Inherit Form View to Modify it -->
+        <record id="stock_view_picking_form_extend" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="analytic_accounts"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

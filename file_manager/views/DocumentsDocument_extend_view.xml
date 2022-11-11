@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="documents_document_view_kanban_extend" model="ir.ui.view">
+            <field name="name">documents.document kanban</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <span t-if="record.lock_uid.raw_value">
+                        <field name="lock_uid" widget="many2one_avatar_user"/>
+                    </span>
+                    <button href="#" name="add_revision" type="object" class="btn btn-sm btn-outline-success">
+                        Add</button>
+                    <button href="#" name="view_revision_list" type="object"
+                            class="btn btn-sm btn-outline-info">List</button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

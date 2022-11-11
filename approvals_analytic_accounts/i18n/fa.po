@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* approvals_analytic_accounts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-30 07:16+0000\n"
+"PO-Revision-Date: 2022-10-30 07:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,help:approvals_analytic_accounts.field_approval_category__approval_type
+#: model:ir.model.fields,help:approvals_analytic_accounts.field_approval_request__is_linked_to_inventory_operation
+msgid ""
+"Allows you to define which documents you would like to create once the "
+"request has been approved"
+msgstr ""
+"به شما امکان می‌دهد، پس از تایید شدن درخواست شما، مشخص کنید که کدام اسناد "
+"ایجاد شوند"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_stock_picking__analytic_accounts
+msgid "Analytic Accounts"
+msgstr "حساب مرکز هزینه / پروژه"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields.selection,name:approvals_analytic_accounts.selection__approval_category__approval_type__analytic_accounts
+msgid "Analytic Accounts's"
+msgstr "درخواست حواله انبار"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category__approval_type
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__is_linked_to_inventory_operation
+msgid "Approval Type"
+msgstr "نوع تایید"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model,name:approvals_analytic_accounts.model_approval_request
+msgid "Approvals Request"
+msgstr ""
+
+#. module: approvals_analytic_accounts
+#: model:ir.model,name:approvals_analytic_accounts.model_approval_category
+msgid "Approvals analytic accounts"
+msgstr ""
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__approval_category_description
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category__display_name
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_product_line__display_name
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__display_name
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category__has_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__has_analytic_accounts
+msgid "Has Analytic Accounts"
+msgstr "مرکز هزینه"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category__id
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_product_line__id
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__id
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_stock_picking__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__is_inventory_operation_is_allowed
+msgid "Is Inventory Operation Is Allowed"
+msgstr ""
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request__is_send_inventory_transfer
+msgid "Is Send Inventory Transfer"
+msgstr ""
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category____last_update
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_product_line____last_update
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_request____last_update
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "تاریخ آخرین به‌روزرسانی"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields.selection,name:approvals_analytic_accounts.selection__approval_category__has_analytic_accounts__no
+msgid "None"
+msgstr "هیچکدام"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields.selection,name:approvals_analytic_accounts.selection__approval_category__has_analytic_accounts__optional
+msgid "Optional"
+msgstr "اختیاری"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model,name:approvals_analytic_accounts.model_approval_product_line
+msgid "Product Line"
+msgstr "ردیف محصول"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields.selection,name:approvals_analytic_accounts.selection__approval_category__has_analytic_accounts__required
+msgid "Required"
+msgstr "الزامی"
+
+#. module: approvals_analytic_accounts
+#: code:addons/approvals_analytic_accounts/models/models.py:0
+#, python-format
+msgid "Selected product %s doesnt have any order point rule"
+msgstr "برای کالای %s هیچ قاعده نقطه سفارشی وجود ندارد"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model.fields,field_description:approvals_analytic_accounts.field_approval_category__stock_picking_type
+msgid "Stock Picking Type"
+msgstr "نوع عملیات"
+
+#. module: approvals_analytic_accounts
+#: model_terms:ir.ui.view,arch_db:approvals_analytic_accounts.approvals_approval_request_view_form_extend
+msgid "Submit inventory transfer"
+msgstr "ثبت درخواست حواله انبار"
+
+#. module: approvals_analytic_accounts
+#: model:ir.model,name:approvals_analytic_accounts.model_stock_picking
+msgid "Transfer"
+msgstr "انتقال"
+
+#. module: approvals_analytic_accounts
+#: code:addons/approvals_analytic_accounts/models/models.py:0
+#, python-format
+msgid "User error"
+msgstr "خطای کاربر"

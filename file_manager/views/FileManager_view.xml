@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="file_manager_form" model="ir.ui.view">
+        <field name="name">file.manager form</field>
+        <field name="model">file.manager</field>
+        <field name="arch" type="xml">
+            <form string="Attachments" import="false" create="false">
+                <sheet>
+                    <widget name="web_ribbon" title="Untitled" bg_color="bg-warning"
+                            attrs="{'invisible': [('title', '!=', False)]}"/>
+                    <label for="title" class="oe_edit_only"/>
+                    <span attrs="{'invisible':[('is_main','!=',True)]}">
+                        <field name="is_main" string="Main File" widget="toggle_button"/>
+                    </span>
+                    <h1>
+                        <field name="title"/>
+                    </h1>
+                    <group>
+                        <field name="type" attrs="{'invisible':True}"/>
+                        <span class="text-muted">
+                            <field name="datas" filename="name" string="File" style="margin-right:10px"/>
+                            <!--if enable it won't rename file name and type after editing revision file-->
+                            <!--<field name="name" attrs="{'invisible':True}"/>-->
+                            <field name="get_name"/>
+                        </span>
+                        <field name="url" widget="url" attrs="{'invisible':True}"/>
+                    </group>
+                    <field name="mimetype" groups="base.group_no_one" attrs="{'invisible':True}"/>
+                    <group>
+                        <!-- اضافه کردن مشخصه نوع مستند، پروژه و محصول به مدیریت مستندات (#17) -->
+                        <div class='col-6'>
+                            <label for="tags_ids"/>
+                            <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <label for="category"/>
+                            <field name="category" widget="many2many_tags"/>
+                        </div>
+                        <div class='col-6'>
+                            <label for="connected_to"/>
+                            <field name="connected_to" widget="selection"/>
+                            <field name="product_template_id" widget="many2many_tags"
+                                   attrs="{'invisible': [('connected_to', '!=', 'product')],'required': [('connected_to', '!=', 'project')]}"/>
+                            <field name="project_project_id" widget="many2many_tags"
+                                   attrs="{'invisible': [('connected_to', '!=', 'project')],'required': [('connected_to', '!=', 'product')]}"/>
+                        </div>
+                        <!-- اضافه کردن مشخصه نوع مستند، پروژه و محصول به مدیریت مستندات (#17) -->
+                    </group>
+                    <field name="body" widget="html"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="file_manager_list" model="ir.ui.view">
+        <field name="name">file.manager list</field>
+        <field name="model">file.manager</field>
+        <field name="arch" type="xml">
+            <tree string="" import="false" create="false">
+                <field name="title"/>
+                <field name="is_main" string="Main File" widget="toggle_button"
+                       attrs="{'readonly':True,'invisible':[('is_main','!=',True)]}"/>
+                <field name="name" string="File Name"/>
+                <field name="type" string="Type" optional="True"/>
+                <field name="file_size" string="Size" optional="True"/>
+                <field name="tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field string="Owner" name="create_uid" widget="many2one_avatar_user" optional="True"/>
+                <field string="Last Create" name="create_date" widget="datetime" optional="True"/>
+                <field string="Last Edit" name="write_date" widget="datetime" optional="True"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="file_manager_kanban">
+        <field name="name">file.manager kanban</field>
+        <field name="model">file.manager</field>
+        <field name="arch" type="xml">
+            <kanban edit="false" import="false" create="false">
+                <field name="id"/>
+                <field name="mimetype"/>
+                <field name="type"/>
+                <field name="create_uid"/>
+                <field name="url"/>
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="tags_ids"/>
+                <field name="title"/>
+                <field name="is_main"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <t t-set="fileRequest" t-value="record.type.raw_value === 'empty'"/>
+                        <div draggable="true"
+                             class="oe_kanban_global_area oe_kanban_global_click o_kanban_attachment o_documents_attachment"
+                             t-att-data-id="record.id.raw_value">
+                            <div class="row">
+                                <div class="offset-10">
+                                    <div class="o_dropdown_kanban dropdown" groups="base.group_user">
+                                        <i t-if="record.is_main.raw_value" class="fa fa-circle text-success" role="img"
+                                           aria-label="Ok" title="Main File"/>
+                                        <i t-if="!record.title.raw_value" class="fa fa-circle text-warning" role="img"
+                                           aria-label="Invalid" title="Untitled"/>
+                                        <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown"
+                                           href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                            <span class="fa fa-ellipsis-v"/>
+                                        </a>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a role="menuitem" type="delete"
+                                               class="dropdown-item">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_kanban_image">
+                                <t t-set="webimage"
+                                   t-value="new RegExp('image.*(gif|jpeg|jpg|png)').test(record.mimetype.value)"/>
+                                <t t-set="binaryPreviewable"
+                                   t-value="new RegExp('(image|video|application/pdf|text)').test(record.mimetype.value) &amp;&amp; record.type.raw_value === 'binary'"/>
+                                <div name="document_preview">
+                                    <img t-if="youtubeVideoToken" width="100" height="100" alt="Document"
+                                         class="o_attachment_image"
+                                         t-attf-src="https://img.youtube.com/vi/{{youtubeVideoToken}}/0.jpg"/>
+                                    <!--                                    <div t-elif="record.type.raw_value == 'url'"-->
+                                    <!--                                         class="o_url_image fa fa-link fa-3x text-muted"/>-->
+                                    <img t-elif="webimage"
+                                         t-attf-src="/file_manager/image/#{record.id.raw_value}?field=thumbnail"
+                                         width="100"
+                                         height="100" alt="File Manager" class="o_attachment_image"/>
+                                    <!--                                    <div t-elif="fileRequest" class="fa fa-upload fa-3x text-muted"/>-->
+                                    <div t-else="!webimage" class="o_image o_image_thumbnail"
+                                         t-att-data-mimetype="record.mimetype.value"/>
+                                </div>
+                            </div>
+                            <div class="o_kanban_details">
+                                <div class="o_kanban_details_wrapper">
+                                    <div t-if="record.name.raw_value" t-att-title="record.name.raw_value"
+                                         class="o_kanban_record_title">
+                                        <strong>
+                                            <field name="name" class="o_text_overflow mb4"/>
+                                        </strong>
+                                    </div>
+                                    <div t-if="record.title.raw_value" t-att-title="record.title.raw_value"
+                                         class="o_kanban_record_title">
+                                        <strong>
+                                            <field widget="badge" name="title"/>
+                                        </strong>
+                                    </div>
+                                    <div class="o_kanban_record_body">
+                                        <field name="tags_ids" widget="many2many_tags"
+                                               options="{'color_field': 'color'}"/>
+                                        <t t-if="record.type.raw_value == 'url'">
+                                            <span class="o_document_url"><i class="fa fa-globe"
+                                                                            aria-label="Document url"/> <field
+                                                    name="url" widget="url"/></span>
+                                        </t>
+                                        <samp t-else="" class="text-muted"></samp>
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+                                        <time class="oe_kanban_bottom_left">
+                                            <field name="create_date" widget="date"/>
+                                        </time>
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="create_uid" widget="many2one_avatar_user"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

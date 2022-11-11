@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="assets_backend_extend" name="documents assets backend extend" inherit_id="documents.assets_backend">
+        <xpath expr="//script[@src='/documents/static/src/js/documents_inspector.js']" position="replace">
+            <script type="text/javascript" src="/file_manager/static/src/js/documents_inspector.js"/>
+        </xpath>
+    </template>
+</odoo>
