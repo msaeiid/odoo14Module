@@ -1,2 +1,2 @@
 # odoo14Module
-some odoo14 module about document and approvals
+two odoo14 submodule related to document and approvals
